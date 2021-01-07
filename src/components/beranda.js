@@ -5,7 +5,7 @@ class beranda extends React.Component {
     render(){
         return(
             <div>
-                <h2>Ini Beranda Saya</h2>
+               <h2>Beranda</h2>
             </div>
         )
     }

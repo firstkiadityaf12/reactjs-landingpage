@@ -5,7 +5,7 @@ class kontak extends React.Component{
     render(){
         return(
             <div>
-                <h2>Ini Halaman kontak</h2>
+                <h2>Kontak</h2>
             </div>
         )
     }
