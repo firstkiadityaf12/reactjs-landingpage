@@ -1,37 +1,26 @@
 import './App.css';
 //import utama
 import React from 'react';
-import Utama from './components/Utama';
-import {Link} from 'react-router-dom';
+import Navbar from "./components/Navbar"
+import {Switch, Route} from "react-router-dom"
+
+//import semua halaman yang ditampilkan
+import beranda from "./components/pages/beranda"
+import kontak from "./components/pages/kontak"
+import gallery from "./components/pages/gallery"
 
 class App extends React.Component{
   render(){
     return(
       <div>
-        <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div className="container">
-        <div className="collapse navbar-collapse" id="navbarNav">
-          <ul className="navbar-nav mr-auto">
-            <li className="nav-item">
-              <a className="nav-link"><Link to="/">Beranda</Link></a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" ><Link to="/tentangsaya">Tentang Saya</Link></a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link"><Link to="/karya">Karya</Link></a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link"><Link to="/kontak">kontak</Link></a>
-            </li>
-            {/* <p><Utama /></p> */}
-          </ul>
-        </div>
+        <Navbar />
+          <Switch>
+            <Route exact path="/" component={beranda} />
+            <Route path="/kontak" component={kontak} />
+            <Route path="/gallery" component={gallery} />
+          </Switch>
       </div>
-      </nav>
-      <p><Utama /></p>
-      </div>
-    );
+    )
   }
 }
 
